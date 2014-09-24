@@ -33,7 +33,7 @@
 
 puts "Veuillez entrer trois entiers :" # Copie la chaîne de caractère demandée dans la console
 puts " a = "
-a = gets.chomp.to_f                    # Prend - sous forme de chaîne de caractère (string) la valeur qu'entre l'utilisateur et la convertit en nombre entier (integer), tout en supprimant l'espace 
+a = gets.chomp.to_f                    # Prend - sous forme de chaîne de caractère (string) la valeur qu'entre l'utilisateur et la convertit en nombre réel (float), tout en supprimant l'espace 
                                        # à la fin, si il y en a un
 puts "b = "
 b = gets.chomp.to_f
