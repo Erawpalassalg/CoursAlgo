@@ -1,5 +1,4 @@
 #encoding: utf-8
-require 'active_support/inflector'
 
 =begin
   Lexique
@@ -86,6 +85,8 @@ require 'active_support/inflector'
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = p1a, p50c = p50ca, p20c = p20ca, p10c = p10ca, p5c = p5ca, p2c = p5ca, p1c = r11a
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = r6a, r7 = r7a, r8 = r8a, r9 = r9a, r10 = r10a, r11 = r11a
 =end
+
+# Ruby code
 
 puts "Veuillez entrer un nombre situé entre 0 et 50 à convertir."
 d = gets.chomp.to_i
