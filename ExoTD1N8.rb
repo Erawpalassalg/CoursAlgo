@@ -40,48 +40,48 @@
     cl.saisir(d)
        // d = d1, b50 = ?, b20 = ?, b10 = ?, b5 = ?, p2 = ?, p1 = ?, p50c = ?, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = ? r2 = ?, r3 = ?, r4 = ?, r5 = ?, r6 = ?, r7 = ?, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    b50 = d/50
-    r1 = d%50
+    b50 ← d div 50
+    r1 ← d mod 50
        // d = d1, b50 = b50a, b20 = ?, b10 = ?, b5 = ?, p2 = ?, p1 = ?, p50c = ?, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r10a r2 = ?, r3 = ?, r4 = ?, r5 = ?, r6 = ?, r7 = ?, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    b20 = r1/20
-    r2 = r1%20
+    b20 ← r1 div 20
+    r2 ← r1 mod 20
        // d = d1, b50 = b50a, b20 = b20a, b10 = ?, b5 = ?, p2 = ?, p1 = ?, p50c = ?, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = ?, r4 = ?, r5 = ?, r6 = ?, r7 = ?, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    b10 = r2/10
-    r3 = r2%10
+    b10 ← r2 div 10
+    r3 ← r2 mod 10
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = ?, p2 = ?, p1 = ?, p50c = ?, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = ?, r5 = ?, r6 = ?, r7 = ?, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    b5 = r3/5
-    r4 = r3%5
+    b5 ← r3 div 5
+    r4 ← r3 mod 5
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = ?, p1 = ?, p50c = ?, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = ?, r6 = ?, r7 = ?, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    p2 = r4/2
-    r5 = r4%2
+    p2 ← r4 div 2
+    r5 ← r4 mod 2
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = ?, p50c = ?, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = ?, r7 = ?, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    p1 = r5/1
-    r6 = r5%1
+    p1 ← r5 div 1
+    r6 ← r5 mod 1
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = p1a, p50c = ?, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = r6a, r7 = ?, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    p50c = r6/0.50
-    r7 = r6%0.50
+    p50c ← r6 div 0.50
+    r7 ← r6 mod 0.50
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = p1a, p50c = p50ca, p20c = ?, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = r6a, r7 = r7a, r8 = ?, r9 = ?, r10 = ?, r11 = ?
-    p20c = r7/0.20
-    r8 = r7%0.20
+    p20c ← r7 div 0.20
+    r8 ← r7 mod 0.20
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = p1a, p50c = p50ca, p20c = p20ca, p10c = ?, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = r6a, r7 = r7a, r8 = r8a, r9 = ?, r10 = ?, r11 = ?
-    p10c = r8/0.10
-    r9 = r8%0.10
+    p10c ← r8 div 0.10
+    r9 ← r8 mod 0.10
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = p1a, p50c = p50ca, p20c = p20ca, p10c = p10ca, p5c = ?, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = r6a, r7 = r7a, r8 = r8a, r9 = r9a, r10 = ?, r11 = ?
-    p5c = r9/0.5
-    r10 = r9%0.5
+    p5c ← r9 div 0.5
+    r10 ← r9 mod 0.5
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = p1a, p50c = p50ca, p20c = p20ca, p10c = p10ca, p5c = p5ca, p2c = ?, p1c = ?
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = r6a, r7 = r7a, r8 = r8a, r9 = r9a, r10 = r10a, r11 = ?
-    p2c = r10/0.2
-    r11 = r10%0.1
+    p2c ← r10 div 0.2
+    r11 ← r10 mod 0.1
        // d = d1, b50 = b50a, b20 = b20a, b10 = b10a, b5 = b5a, p2 = p2a, p1 = p1a, p50c = p50ca, p20c = p20ca, p10c = p10ca, p5c = p5ca, p2c = p5ca, p1c = r11a
        // r1 = r1a r2 = r2a, r3 = r3a, r4 = r4a, r5 = r5a, r6 = r6a, r7 = r7a, r8 = r8a, r9 = r9a, r10 = r10a, r11 = r11a
 =end
