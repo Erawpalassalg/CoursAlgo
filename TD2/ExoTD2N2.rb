@@ -15,10 +15,9 @@
       e.afficher("Saisissez deux nombres.")
       cl.saisir(a, b)
         // a = a0, b = b0
-      si          
-        (a > 0 et b < 0) ou (a < 0 et b > 0 ) : e.afficher("Le produit des deux nombres est négatif")
-      sinon
-        : e.afficher("Le produit des deux nombres est positif ou nul")
+      si (a > 0 et b < 0) ou (a < 0 et b > 0 )    
+        alors e.afficher("Le produit des deux nombres est négatif")
+        sinon e.afficher("Le produit des deux nombres est positif ou nul")
       fsi
 =end
 
