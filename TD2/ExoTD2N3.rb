@@ -67,16 +67,21 @@ a = gets.chomp.to_f
 b = gets.chomp.to_f
 c = gets.chomp.to_f
 
-m1 = (a+b+c)/3
-m2 = (a+b)/2
+# On commence par le plus simple: calculer la moyenne des 3
 
-if a >= b and a >= c
+m1 = (a+b+c)/3
+
+# Puis il faut définir quel chiffre est le plus grand entre a, b et c
+
+if a >= b and a >= c                               #Bien faire attention aux égalités, il ne peux y avoir deux réponses vraies
   nmax = a
 elsif b > a and b >= c
   nmax = b
 elsif c > a and c > b
   nmax = c
 end
+
+# On détermine ensuite le minimum d'a, b et c
 
 if a <= b and a <= c
   nmin = a
@@ -86,9 +91,13 @@ elsif c < a and c < b
   nmin = c
 end
 
+# On fait ensuite la moyenne entre le minimum et le maximum
+
 m2 = (nmin + nmax)/2
 
-if m1 >= m2
+# Puis on détermine le plus grand des deux moyennes possibles
+
+if m1 >= m2                                     # Si il y a égalité, elle est gérée ici
   puts "La note de l'élève #{nom} est #{m1}"
 elsif m2 > m1
   puts "La note de l'élève #{nom} est #{m2}"
