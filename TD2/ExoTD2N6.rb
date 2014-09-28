@@ -17,7 +17,7 @@
   
       // a = ?, m = ?, c = ?, d = ?, u = ?
       
-    e.afficher("Veillez entrer un nombre binaire composé de 4 chiffre 1 ou 0")
+    e.afficher("Veillez entrer un nombre binaire composé de 4 chiffres 1 ou 0")
     cl.saisir(a)
     
       // a = a0 ou a[0,1,2,3], m = ?, c = ?, d = ?, u = ?
