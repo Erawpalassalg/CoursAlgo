@@ -38,7 +38,7 @@
           // Anc = Anc0, AncMin = (AncMin0 ou ?), Age = Age0, EstC = EstC0, JdC = ?
           
       selon
-        Anc < 1 : e.afficher(AncMin*2, " jours de congé")
+        Anc < 1                                                                                                           : e.afficher(AncMin*2, " jours de congé")
         Anc > 1 et (Anc < 3 ou EstC = faux ou Age < 35)                                                                   : e.afficher("28 jours de congé")
         (EstC = vrai et (Anc >= 3 et (Age >= 35 et Age < 45))) ou (EstC = vrai et ( Anc >= 3 et (Anc <= 5 et Age >= 35))) : e.afficher(28+2, " jours de congé")
         EstC = vrai et (Anc >= 5 et Age >= 45)                                                                            : e.afficher(28+4, " jours de congé")

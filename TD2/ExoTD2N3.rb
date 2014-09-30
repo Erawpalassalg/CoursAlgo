@@ -27,12 +27,12 @@
     
       // nom = "nom0", a = a0, b = b0, c = c0, m1 = ?, m2 = ?, nmax = ?, nmin = ?
       
-    m1 ← (a+b+c) div 3
+    m1 ← (a+b+c)/3
     
       // nom = "nom0", a = a0, b = b0, c = c0, m1 = m10, m2 = ?, nmax = ?, nmin = ?
       // relation m1 = (a+b+c)/3
       
-    selon
+    selon a, b, c, nmax
       a >= b et a >= c : nmax ← a
       b > a et b >= c  : nmax ← b
       c > a et c > b   : nmax ← c
@@ -40,7 +40,7 @@
     
       // nom = "nom0", a = a0, b = b0, c = c0, m1 = m10, m2 = ?, nmax = nmax0, nmin = ?
     
-    selon
+    selon a, b, c, nmin
       a <= b et a <= c : nmin ← a
       b < a et b <= c  : nmin ← b
       c < a et c < b   : nmin ← c
@@ -48,7 +48,7 @@
 
       // nom = "nom0", a = a0, b = b0, c = c0, m1 = m10, m2 = ?, nmax = nmax0, nmin = nmin0
     
-    m2 ← (nmax + nmin) div 2
+    m2 ← (nmax + nmin)/2
 
       // nom = "nom0", a = a0, b = b0, c = c0, m1 = m10, m2 = m20, nmax = nmax0, nmin = nmin0
       

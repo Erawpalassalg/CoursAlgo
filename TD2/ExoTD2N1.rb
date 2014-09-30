@@ -15,7 +15,7 @@
     e.afficher("Veuillez entrer un verbe français.")
     cl.saisir(vb)
       // vb = "vb0", k = ?
-    k ← SousChaine(vb, -2, -1)
+    k ← SousChaine(vb, longueur(vb)-1, 2)  // La fonction SouChaine prend un objet, un caractère de départ (ici l'avant dernier caractère : -1) et une longueur ( ici 2 caractères )
       // vb = "vb0", k = "k0"
     selon
       k = "er" : e.afficher(vb, " est un verbe du premier groupe")
@@ -28,7 +28,7 @@
 puts "Veuillez entrer un verbe français."
 vb = gets.chomp
 
-k = vb[-2..-1]
+k = vb[-2..-1]                                        # Remplacement de la fonction SouChaine par un équivalent en ruby
 if k == "er" and vb != "aller"
   puts "#{vb} est un verbe du premier groupe"
 else
