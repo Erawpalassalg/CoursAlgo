@@ -3,9 +3,9 @@
 =begin
     Lexique
       Données
-        a : Réel != 0// ancienneté de l'individu, en années, donnée utilisateur
-        b : Réel // Ancienneté de l'individu, en mois, donnée utilisateur
-        c : Réel // age de l'individu, en années, donnée utilisateur
+        a : Réel != 0// donnée utilisateur
+        b : Réel // donnée utilisateur
+        c : Réel // donnée utilisateur
       Variables
         dd : Réel // Discriminant delta, permet de donner la réponse
       Périphériques
@@ -16,7 +16,7 @@
     
         // a = ?, b = ?, c = ?, dd = ?    
     
-    e.afficher("Veillez entrer les nombres a, b et c de l'équation ax² + bx + c = 0")
+    e.afficher("Veuillez entrer les nombres a, b et c de l'équation ax² + bx + c = 0")
     cl.saisir(a, b, c)
     
         // a = a0, b = b0, c = c0, dd = ?
