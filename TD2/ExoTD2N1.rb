@@ -17,7 +17,7 @@
       // vb = "vb0", k = ?
     k ← SousChaine(vb, longueur(vb)-1, 2)  // La fonction SouChaine prend un objet, un caractère de départ (ici l'avant dernier caractère : -1) et une longueur ( ici 2 caractères )
       // vb = "vb0", k = "k0"
-    selon
+    selon k
       k = "er" : e.afficher(vb, " est un verbe du premier groupe")
       k != "er" : e.afficher (vb, " n'est pas un verbe du premier groupe")
     fselon

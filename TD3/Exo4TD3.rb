@@ -7,6 +7,8 @@
       Données
         r : Réel // paramètre, longueur du rayon
         h : Réel // paramètre, hauteur du cylindre   
+      Fonction
+        Pi() // Permet de récupérer le nombre Pi depuis la fonction le calcullant
         
     Algorithme de volumeCylindre
     Retourne(r*h*Pi())

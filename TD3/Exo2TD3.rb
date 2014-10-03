@@ -7,7 +7,7 @@
       Données
         a : Entier // paramètre   
         
-    Algorithme  
+    Algorithme de estBisextile
         si a mod 4 = 0
         Alors si a mod 100 = 0
               Alors si a mod 400 = 0

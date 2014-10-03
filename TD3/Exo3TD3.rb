@@ -1,27 +1,28 @@
 #encoding: utf-8
 
 =begin
+
+  fonction estDuPremierGroupe(v:chaine) -> booléen
+      //renvoie vrai si le verbe v est du premier groupe, sinon renvoie faux
+  Lexique de estDuPremierGroupe
+    Données
+      v : Chaine // paramètre - verbe donné à analyser   
+              
+  Algorithme  de estDuPremierGroupe
+     si (SousChaine(vb, longueur(vb)-1, 2) = "er") et (v != "aller")
+     Alors Renvoyer(vrai)
+     Sinon Renvoyer(faux)
+     fsi
+     
+  
   Lexique
     Données
       vb : chaîne de caractère représentant un verbe // donnée utilisateur
     Périphériques
       cl : clavier // périphérique d'entrée
       e : écran // périphérique de sortie
-      
-      
-    Algorithme Principal
-    
-        fonction estDuPremierGroupe(v:chaine) -> booléen
-          //renvoie vrai si le verbe v est du premier groupe, sinon renvoie faux
-          Lexique de estDuPremierGroupe
-            Données
-              v : Chaine // paramètre - verbe donné à analyser   
-              
-          Algorithme  
-              si (SousChaine(vb, longueur(vb)-1, 2) = "er") et (v != "aller")
-              Alors Renvoyer(vrai)
-              Sinon Renvoyer(faux)
-              fsi
+          
+  Algorithme Principal
     
     e.afficher("Veuillez entrer un verbe")
     cl.sasir(vb)

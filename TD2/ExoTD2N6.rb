@@ -28,7 +28,7 @@
       
       // a = a0 ou a[0,1,2,3], m = ? ou m0, c = ? ou c0, d = ? ou d0, u = ? ou u0
       
-    selon
+    selon a
       type(a) = Tableau : e.afficher("Votre nombre est égal à "a[0]*8 + a[1]*4 + a[2]*2 + a[3])
       type(a) = Entier : e.afficher("Votre nombre est égal à " m*8 + c*4 + d*2 + u)
     fselon

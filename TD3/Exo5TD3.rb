@@ -7,7 +7,7 @@
       Données
         a : Entier // paramètre   
         
-    Algorithme  
+    Algorithme estBissextile
         si a mod 4 = 0
         Alors si a mod 100 = 0
               Alors si a mod 400 = 0
@@ -30,10 +30,10 @@
     Algorithme de dateValide
     
     si j > 28
-    Alors selon
+    Alors selon j, m, a
             j > 29 et m = 2 : Retourne(faux)
             j = 29 et m = 2 et estBissextile(a) = faux : Retourne(faux)
-            j > 30 et ((m <= 6 et m%2 = 0) ou (m >= 9 et m%2 != 0)) : Retourne(faux)
+            j > 30 et ((m <= 6 et m mod 2 = 0) ou (m >= 9 et m mod 2 != 0)) et m != 2 : Retourne(faux)
             Autrement : Retourne(vrai)
           fselon
     Sinon Retourne(vrai)

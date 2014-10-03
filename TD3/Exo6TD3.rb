@@ -31,7 +31,7 @@
         
     Algorithme de quantième
       quant ← 0
-      selon
+      selon j, m, a, quant
         m < 2 : quant ← j
         m >= 2 et m <= 8 : quant ← ((m-1)*31 - ((m-1) div 2) + estBissextile(a) + j)
         m >= 9 : quant ← ((m-1)*31 - ((m div 2)-1) + estBissextile(a) + j)
@@ -40,7 +40,7 @@
 =end
 
 #Ruby
-
+ 
 def estBissextile(a)
   if a%4 == 0
     if a%100 == 0

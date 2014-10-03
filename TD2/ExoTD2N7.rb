@@ -25,7 +25,7 @@
 
         // a = a0, b = b0, c = c0, dd = dd0 ( = b² - 4*a*c)
         
-    selon
+    selon dd
       dd < 0 : e.afficher("Pas de solution réelle")
       dd = 0 : e.afficher("x = ", (-b)/(2*a))
       dd > 0: e.afficher("Deux solutions : x1 = ", (-b+racine(dd))/(2*a), " ou x2 = ", (-b-racine(dd))/(2*a))
