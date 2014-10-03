@@ -3,7 +3,7 @@
 =begin
     Lexique
       Données
-        a : Réel // ancienneté de l'individu, en années, donnée utilisateur
+        a : Réel != 0// ancienneté de l'individu, en années, donnée utilisateur
         b : Réel // Ancienneté de l'individu, en mois, donnée utilisateur
         c : Réel // age de l'individu, en années, donnée utilisateur
       Variables
@@ -11,7 +11,7 @@
       Périphériques
         cl : clavier // périphérique d'entrée
         e : écran // périphérique de sortie    
-        
+     
     Algorithme
     
         // a = ?, b = ?, c = ?, dd = ?    
