@@ -5,9 +5,9 @@
     // Renvoie l'entier -1 si l'année a est bissextile sinon renvoie l'entier -2
     Lexique de estBissextile
       Données
-        a : Entier // paramètre   
+        a : Entier // paramètre
         
-    Algorithme  
+    Algorithme  de estBissextile
         si a mod 4 = 0
         Alors si a mod 100 = 0
               Alors si a mod 400 = 0
