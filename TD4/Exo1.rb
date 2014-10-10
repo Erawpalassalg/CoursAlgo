@@ -41,12 +41,12 @@
 #c
 
 =begin
-  Lexique horaireSuivant(x : Horaire) -> Horaire
-      // horaireSuivant renvoie l'horaire suivant l'horaire entré en paramètre d'une seconde
-    Données
-      x : Horaire // paramètre
-      y : Horaire // horaire renvoyé
-   
+ 
+  fonction horaireSuivant(x : Horaire) -> Horaire
+    // horaireSuivant renvoie l'horaire suivant l'horaire entré en paramètre d'une seconde
+  Lexique 
+    x : Horaire // paramètre
+    y : Horaire // horaire renvoyé
   Algorithme de horaireSuivant
     selon x
       x.heure <= 23 et x.minute <= 59 et x.seconde < 59 : y.heure ← x.heure ; y.minute ← x.minute ; y.seconde ← x.seconde + 1
