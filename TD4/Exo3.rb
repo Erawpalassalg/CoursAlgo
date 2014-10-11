@@ -26,7 +26,7 @@ puts a, b, c
 
 #b
 =begin
-  action décalageCirculaire(a : Entier, b : Entier ,c : Entier) -> Entier
+  action décalageCirculaire(consulté a : Entier, consulté b : Entier, consulté c : Entier, élaboré x : entier)
     // décale les valeurs de trois variables vers la gauche
     // EI : a = a0, b = b0, c = c0, x=?
     // EF : a = b0, b = c0, c = a0, x = a0 
