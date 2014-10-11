@@ -14,6 +14,16 @@
       //a = b0, b = c0, c = a0, x = a0 
 =end
 
+# Ruby
+
+puts "Entrez trois valeurs"
+a, b, c = gets.chomp, gets.chomp, gets.chomp
+
+x, a, b = a, b, c
+c = x
+
+puts a, b, c
+
 #b
 =begin
   action décalageCirculaire(a : Entier, b : Entier ,c : Entier) -> Entier
@@ -29,3 +39,11 @@
   Algorithme de déclageCirculaire
     x ← a ; a ← b ; b ← c ; c ← x
 =end
+
+# Ruby
+
+def decalageCirculaire(a, b, c)
+  x, a, b = a, b, c
+  c = x
+  return a, b, c
+end
