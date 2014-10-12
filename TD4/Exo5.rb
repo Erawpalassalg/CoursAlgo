@@ -28,9 +28,9 @@
         X : Message // donnée
         
     Algorithme de traiterMessage
-      // On considère que la fonction Toutlemonde() implique d'autre mécanismes que la fonction ServiceDestinataire() et, par conséquent, un message envoyé
-       à tout le monde ne peux avoir de service destinataire.
-        Si Toutlemonde(X) = vrai et Taille(X) < tailleMax(300, Priorité(X)) 
+      // On considère que la fonction Toutlemonde() implique le même mécanisme que la fonction ServiceDestinataire() et, par conséquent, un message envoyé
+      // à tout le monde ne peut avoir de service destinataire.
+        Si Toutlemonde(X) = vrai et Taille(X) < tailleMax(300, Priorité(X))  // Choix des "si" emboîtés pour éviter des expressions à rallonge dans un "selon"
         Alors Archiver(X) ; Envoyer(X)
         Sinon Si ServiceDestinataire(X) = "Commercial"
               Alors Archiver(X) ; Envoyer(X)
@@ -60,14 +60,13 @@ class Message
   end
 end
 
-puts "Votre message est-il destiné à tous les employés de la compagnie ?"
-broad = gets.chomp
-
-if broad[0] == "o" or broad[0] == "O"
-  dest = ""
-else 
-  puts "Veuillez entrer le service destinataire du message"
+  puts "Veuillez entrer le service destinataire du message -- 'broadcast' si tous les services sont destinataires"
   dest = gets.chomp
+
+if dest.downsize == "broadcast"
+  broad = true
+else 
+  broad = false
 end
 
 puts "Sur une échelle de 1 à 4 ( 4 étant la plus grande priorité ), quelle est la priorité de votre message ?"
@@ -81,7 +80,7 @@ email = Message.new siz, prio, broad, dest
 #Définition des fonctions données
 
 def toutLeMonde(msg)
-  msg.broadcast[0] == "o" or msg.broadcast[0] == "O"  
+  msg.broadcast == true
 end
 
 def taille(msg)
