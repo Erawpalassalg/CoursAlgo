@@ -1,8 +1,11 @@
 """
-	Lexique partagé
+
+ Lexique partagé
 		Périphériques :
 			e : écran // périphérique de sortie
 			cl : clavier // périphérique d'entrée
+
+
 
  action DessinerCarré ( consultés P : Point, Long : Réel > 0, modifié m : machine-tracés)
 	//Effet : dessine à l'aide de ma machine-tracés m un carré de longeur Long, à partir du point P et dont le 
@@ -25,6 +28,8 @@
 			m.Av(Long)
 			m.Droite(90)
 		frépéter
+		
+		
 		
  action DessinerRectangle ( consultés P : Point, Long : Réel > 0, Larg : Réel > 0, modifié m : machine-tracés)
 	//Effet : dessine à l'aide de ma machine-tracés m un rectangle de longeur Long et de largeur Larg, à partir du point
@@ -102,6 +107,9 @@
 			Z ← Z - L/4
 		frépéter
 		
+	
+	
+	
 	
 	Lexique principal
 		start : Point // Point de départ
