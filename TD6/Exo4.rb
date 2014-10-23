@@ -10,18 +10,22 @@
       f1 : Fichier de caractères // donnée finale
       a : Chaîne // donnée intermédiaire, à insérer dans le nouveau fichier
     Fonctions
-      FindeSéquence cité U po→ booléen // renvoie vrai si positionné en fin de séquence
+      FindeFichier → booléen // renvoie vrai si positionné en fin de séquence
       EC → élément // renvoie la position de EC
     Actions
-      Démarrer // se positionne sur le premier élément dela séquence
-      Avancer // Sepositionne sur l'élément suivant
+      LirePremier // se positionne sur le premier élément de la séquence dans un fichier
+      LireSuivant // Se positionne sur l'élément suivant d'une séquence dans un fichier
+      PréparerEnregistrement // se  positionne au début du fichier, en mode "écriture"
+      Enregistrer(X) // Enregistre la valeur X dans un fichier
     
   Algorithme
-    f.Démarrer
+    f.LirePremier
     tantque f.FDF = false
       a ← a•f.EC
+      f.LireSuivant
     ftantque
-    f1 ← a
+    f1.PréparerEnregistrement
+    f1.Enregistrer(a)
       
     
 =end
@@ -51,17 +55,19 @@ IO.write("test2.txt", a)
       f1 : Fichier de caractères // donnée finale
       a : Chaîne // donnée intermédiaire, chaîne composée des caractères précédant l'élément courant dans le fichier f1
     Fonctions
-      FindeSéquence cité U po→ booléen // renvoie vrai si positionné en fin de séquence
+      FindeFichier → booléen // renvoie vrai si positionné en fin de séquence
       EC → élément // renvoie la position de EC
     Actions
-      Démarrer // se positionne sur le premier élément dela séquence
-      Avancer // Sepositionne sur l'élément suivant
+      LirePremier // se positionne sur le premier élément de la séquence dans un fichier
+      LireSuivant // Se positionne sur l'élément suivant d'une séquence dans un fichier
+      PréparerEnregistrement // se  positionne au début du fichier, en mode "écriture"
+      Enregistrer(X) // Enregistre la valeur X dans un fichier
     
   Algorithme
       // a = ? ; f = f0 ; f1 = F10
     a ← ""
       // a = "a0" ; f = f0; f1 = f10
-    f.Démarrer
+    f.LirePremier
     tantque non f.FDF
       Selon f.EC
         f.EC = ' ' : a ← a•'/'
@@ -69,8 +75,10 @@ IO.write("test2.txt", a)
         Autrement : a ← a•f.EC
           // a = "a0"•f < f.EC•f.EC ; f = f0 ; f1 = f10
       fSelon
+      f.LireSuivant
     ftantque
-    f1 ← a
+    f1.PréparerEnregistrement
+    f1.Enregistrer(a)
       // a = "a1" ; f = f0 ; f1 = f11
     
 =end
