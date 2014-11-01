@@ -40,20 +40,20 @@ Lexique
 =end
 
 # Ruby
-File.open("test3.txt", "r") do |i|
-  puts "fichier vide" if i.size == 0
-end
-min = nil
-max = nil
-IO.readlines("test3.txt").each do |ii|
-    ii.split.each do |iii|
-      iii = iii.to_i
-      min = iii if min == nil
-      max = iii if max == nil
-      min = iii if iii < min
-      max = iii if iii > max
+if File.zero?("test3.txt", "r")
+    puts "fichier vide"
+  else
+    min = nil
+    max = nil
+    IO.readlines("test3.txt").each do |ii|
+       ii.split.each do |iii|
+          iii = iii.to_i
+          min = iii if min == nil or iii < min
+          max = iii if max == nil or iii > max
+       end
     end
+    puts min
+    puts max
+  end
 end
 
-   puts min
-  puts max
