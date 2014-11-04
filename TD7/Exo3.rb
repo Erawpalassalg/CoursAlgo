@@ -17,3 +17,8 @@
 		fSi
 		
 =end
+
+#Ruby
+
+lines = File.readlines("texo2.txt","r")
+puts lines.last[-1]

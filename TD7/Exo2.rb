@@ -34,3 +34,32 @@
 		fTantque
 		fc.Marquer ; fv.Marquer
 =end
+
+#Ruby
+
+a = IO.readlines("texo2.txt")
+fv = File.open("exo2voy.txt", "w+")
+fc = File.open("exo2cons.txt", "w+")
+
+a.each do |x|
+  x.chomp!
+  i = 0
+  while i < x.length
+    unless x[i] == " "
+      if x[i] == "a" or x[i] == "e" or x[i] == "i" or x[i] == "o" or x[i] == "u" or x[i] == "y"
+         fv << x[i]
+      else
+        fc << x[i]
+      end
+    end
+    i += 1
+  end
+end
+
+files = [fc,fv]
+
+files.each do |i|
+  i.rewind
+  puts i.read
+  i.close
+end
