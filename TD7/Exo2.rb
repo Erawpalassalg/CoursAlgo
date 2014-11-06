@@ -37,7 +37,7 @@
 
 #Ruby
 
-a = IO.readlines("texo2.txt")
+a = IO.readlines("Exo2Test.txt")
 fv = File.open("exo2voy.txt", "w+")
 fc = File.open("exo2cons.txt", "w+")
 
