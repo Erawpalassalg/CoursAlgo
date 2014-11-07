@@ -21,7 +21,7 @@
 	Algorithme
 		fr.PréparerEnregistrement
 		s1.Démarrer ; s2.Démarrer
-		Tantque non s1.FindeSéquence et non s2.FindeSéquence faire		
+		Tantque non s1.FindeSéquence ou non s2.FindeSéquence faire		
 			Selon s1.FindeSéquence s2.FindeSéquence
 				s1.FindeSéquence : enregistrerEtAvancer(s2, fr)
 				s2.FindeSéquence : enregistrerEtAvancer(s1, fr)

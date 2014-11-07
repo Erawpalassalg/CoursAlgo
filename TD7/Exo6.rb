@@ -7,12 +7,13 @@
 		Lexique de SomChiffres
 			N : Entier >= 0 // Donnée initiale
 			num : Entier >= 0 // Donnée intermédiaire
-			s : Entier >= 0 // Donnée renvoyée, somme des chiffres de N
+			s : Entier >= 0 // Donnée renvoyée, somme de la partie parcourue de N
 			d : Entier >=0 // Intermédiaire, dénominateur
 	
 		Algorithme de SomChiffres
 			num ← N
 			s ← 0
+			d ← 1
 			Tantque d < N faire
 				d ← d*10
 			fTantque
