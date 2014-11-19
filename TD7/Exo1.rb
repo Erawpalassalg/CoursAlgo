@@ -12,11 +12,11 @@
 		Si FindeSéquence
 		Alors e.afficher(La séquence est vide)
 		Sinon Tantque non (s.EC mod 2 != 0) et puis non FindeSéquence
-			  s.Avancer
-			  fTantque
-			  Si FindeSéquence
-			  Alors e.afficher(La séquence ne contient que des nombres pairs)
-			 fSi
+			      s.Avancer
+			    fTantque
+			    Si FindeSéquence
+			    Alors e.afficher(La séquence ne contient que des nombres pairs)
+			    fSi
 		fSi
 =end
 
