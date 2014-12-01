@@ -20,17 +20,22 @@ fonction estMagique(M : Matrice ; N entier > 0) → booleen
     j ← 1
     a ← N*(N*N + 1)/2
     b ← vrai
+    cdiag ← N
     scol ← 0
     sli ← 0
-    sdiag ← 0
+    sdiag1 ← 0
+    sdiag2 ← 0
     
     
     Tantque b etpuis i <= N faire
       Selon i, j, N
         j <= N : 
              Si j = i
-             Alors sdiag ← sdiag + M[i][j]
-             fSis ; 
+             Alors sdiag1 ← sdiag1 + M[i][j]
+             fSi ; 
+             Si j = cdiag
+             Alors diag 2 ← M[i][j] + M[j][i] 
+             fSi ; cdiag ← cdiag - 1
              col ← scol + M[j][i] ; sli ← sli + M[i][j] ; j ← j + 1 
                           
         j > N : 
@@ -41,7 +46,7 @@ fonction estMagique(M : Matrice ; N entier > 0) → booleen
       fSelon
     fTantque
     
-    Si b etpuis sdiag != a
+    Si b etpuis (sdiag1 != a ou sdiag2 != a)
     Alors b ← non b
     fSi
     
