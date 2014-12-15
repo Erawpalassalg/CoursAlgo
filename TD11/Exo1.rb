@@ -12,8 +12,9 @@ fonction ExisteCar(C : caractère, X: Chaîne) → booléen
   Algorithme de ExisteCar
     Selon C, X
       longueur(X) = 0 : renvoyer faux
-      Nème(X, longueur(X)) = C : renvoyer vrai
-      Autrement : ExisteCar(C, SousChaine(X, 1, longueur(X)-1))
+      Longueur(X) != 0 : Si Nème(X, longueur(X)) = C
+                         Alors renvoyer vrai
+                         Sinon ExisteCar(C, SousChaine(X, 1, longueur(X)-1))
     fSelon
     
 =end
@@ -48,8 +49,9 @@ fonction ExisteCar(C : caractère, X: Tableau de caractères sur [1..NMAX], N: E
   Algorithme de ExisteCar
     Selon C, X
       N = 0 : renvoyer faux
-      X[N] = C: renvoyer vrai
-      Autrement : ExisteCar(C, X, N-1)
+      N != 0 : Si X[N] = C
+               Alors renvoyer vrai
+               Sinon ExisteCar(C, X, N-1)
     fSelon
   
 =end

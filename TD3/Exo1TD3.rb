@@ -10,7 +10,7 @@
         cl : clavier // périphérique d'entrée
         e : écran // périphérique de sortie    
         
-    Algorithme de estBissextile
+    Algorithme de estVoyelle
         si x = 'a' ou x = 'e' ou x ='i' ou x = 'o' ou x = 'u' ou x = 'y'
         Alors Renvoyer(vrai)
         fsi
