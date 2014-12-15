@@ -9,11 +9,7 @@ fonction EstPalindrome(X:chaîne) → booléen
     X : Chaîne de caractères // paramètre fonctionnel, séquence étudiée
     
   Algorithme de EstPalindrome
-    Selon X
-      longueur(X) <= 1 : renvoyer vrai
-      (Nème(X, 1) != Nème(X, longueur(X))) : renvoyer faux
-      Autrement : EstPalindrome(SousChaine(X, 2, longueur(X)-2))
-    fSelon
+    renvoyer ((longueur(X) < 2) oualors ((pre(X) = (der(X)) etpuis Palindrome(deb(fin(X))))))
   
 =end
 
@@ -22,12 +18,9 @@ fonction EstPalindrome(X:chaîne) → booléen
 a = "laval"
 
 def estPalindrome(x)
-  if x.length <= 1
-    return true
-  elsif x[0] != x[x.length-1]
-    return false
-  else estPalindrome(x[1..x.length-2])
-  end
+  puts x.length < 2 || (x[0] == x[-1] && estPalindrome(x[1..-2]))
+  return x.length < 2 || (x[0] == x[-1] && estPalindrome(x[1..-2]))
+  
 end
 
 puts estPalindrome(a) ? "oui" : "non"

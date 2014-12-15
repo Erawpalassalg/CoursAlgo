@@ -11,7 +11,7 @@ fonction NbreLE(X: chaîne) → Entier >= 0
   Algorithme de NbreLE
     Selon
       longueur(X) < 2 : renvoyer(0)
-      longueur(X) > 2 : Si Nème(X, longueur(X)) = 'E' et Nème(X, longueur(X)-1) = 'L'
+      longueur(X) >= 2 : Si Nème(X, longueur(X)) = 'E' et Nème(X, longueur(X)-1) = 'L'
                         Alors renvoyer(NbreLE(SousChaine(X, 1, longueur(X)-1))+1)
                         Sinon renvoyer(NbreLE(SousChaine(X, 1, longueur(X)-1)))
                         fSi
