@@ -10,8 +10,9 @@ fonction Puissance(x, p : Entier) → Entier
     
   Algorithme de Puissance
     Selon
-      p = 1 : renvoyer(x)
-      p != 1 : renvoyer(Puissance(x, p-1)*x)
+      p = 0 : renvoyer(1)
+      p > 0 : renvoyer(Puissance(x, p-1)*x)
+      p < 0 : renvoyer(puissance(x, p+1)*x)
     fSelon
   
 =end
