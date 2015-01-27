@@ -1,0 +1,142 @@
+Classe Carte
+	lexique de Carte
+		couleur : Entier 0..4 // où 1 = Trèfle et 4 = Pique et 0 = carte inexistante
+		valeur : Entier 1..13 // où 1 = As et 13 = Roi
+		
+		
+	méthodes de Carte
+				 
+		publique action créerCarte(Consulté c, v ; Modifiés : couleur, valeur)
+			// Effet : Initialise a couleur à c et la valeur de la carte à v
+			// EI : couleur, valeur : indifférents
+			// EF : si c et v valides, couleur ← c et valeur ← v
+			
+			Algo de créerCarte
+				couleur ← c
+				valeur ← v
+				 
+				 
+		publique fonction plusForte(Carte c2) → booleen
+			// Renvoie vrai si la carte appelant la méthode est plus forte que la carte c2
+			
+			Algo de plusForte
+				Selon couleur, c2.couleur
+					couleur > c2.couleur : renvoyer(vrai)
+					couleur < c2.couleur : renvoyer(faux)
+					couleur = c2.couleur : 
+											Selon valeur, c2.valeur
+												valeur = 1 ou (c2.valeur < valeur et c2.valeur != 1) : renvoyer(vrai)
+												Autrement : renvoyer(faux)
+											fSelon
+				fSelon
+				
+		publique action afficherCarte(Consultés : couleur, valeur)
+			// Renvoie la couleur et la valeur de la carte au bon format
+			
+			Algo de afficherCarte
+				Si couleur != 0
+				Alors Selon couleur
+						couleur = 1 : c ← "Trèfle"
+						couleur = 2 : c ← "Carreau"
+						couleur = 3 : c ← "Coeur"
+						couleur = 4 : c ← "Pique"
+					  fSelon
+					  Selon valeur
+					  	valeur = 1 : v ← "As"
+					  	valeur = 11 : v ← "Valet"
+					  	valeur = 12 : v ← "Dame"
+					  	valeur = 13 : v ← " Roi"
+					  	Autrement : v ← valeur.enChaîne
+					  fSelon
+				fSi
+				e.afficher(v & " de " & c)
+
+fClasse
+
+Classe Paquet
+	lexique de Paquet
+		cartes : tableau de Carte sur [1..52]
+		distribuée : tableau de booléens sur [1..52]
+		
+	méthodes de Paquet
+		publique action créerPaquer(Modifié : cartes, distribuée)
+			// Effet : Initialise le paquet de 52 cartes et met toutes les cartes en état non distribuée
+			
+			Algo de créerPaquet
+				placeCarte ← 1
+				couleur ← 1
+				Tantque couleur < 5, Faire
+					valeur ← 1
+					Tantque valeur < 14, Faire
+						carte ← Carte.créerCarte(couleur, valeur)
+						cartes[placeCarte] ← carte
+						distribuée[placeCarte] ← faux
+						valeur ← valeur + 1
+						placeCarte ← placeCarte + 1
+					fTantque
+				fTantque
+			
+		publique action mélangerPaquer(?)
+			// Mélange le paquet
+				
+fClasse
+
+Classe Main
+	lexique de Main
+		cartes : type agrégat
+						carte : tableau de Carte sur [1..13] 
+						val : tableau d'Entiers sur [1..13]
+					  fagrégat
+		tête : Entier // Carte la plus faible de la main
+		placeLibre : Entier // Case du tableau libre dans la main
+		
+	méthodes de Main
+		
+		action créerMain(modifié : cartes)
+			// Effet : initie toute la main avec des cartes inexistantes ; la main est vide
+			
+			Algo de créerMain
+				i ← 1
+				Tantque i < 14, faire
+					cartes.carte[i] ← créerCarte(0, 1)
+					i ← i + 1
+				fTantque
+				tête ← nil
+				placeLibre ← 1
+				
+		action insérerCarte(Consulté : c, modifié : cartes)
+			// Effet : insère la Carte carte dans la main
+			
+			Lexique de insérerCarte
+				c : Carte // Paramètre fonctionnel
+				prec : Entier // Emplacement de la carte dont la valeur précède la valeur de c
+				suiv : Entier // Emplacement de la carte dont la valeur suit la valeur de c
+				
+			
+			Algo de insérerCarte
+				cartes.carte[placeLibre] ← c
+				prec ← nil
+				suiv ← tête
+				
+				Tantque suiv != nil etpuis c.plusForte(cartes.carte[suiv])
+					prec ← suiv
+					suiv ← cartes.val[suiv]
+				fTantque
+				
+				Selon prec, suiv
+					suiv = tête : cartes.val[placeLibre] ← tête ; tête ← placeLibre // la carte est la plus faible ou la première de la main
+					suiv != tête et suiv = nil : cartes.val[placeLibre] ← nil ; cartes.val[prec] ← placeLibre // la carte est la plus forte de la main
+					Autrement : cartes.val[placeLibre] ← suiv ; cartes.val[prec] ← placeLibre
+				fSelon
+				
+				chercherPlaceLibre() // action non définie, permettant de trouver une nuvelle place de libre
+				
+		action afficherMain(Consulté : cartes)
+			// Effet : affiche toutes les cartes présentes dans la main du joueur
+			
+			Algo de afficherMain
+				suiv ← tête
+				Tantque suiv != nil
+					cartes.carte[suiv].afficherCarte()
+					suiv ← cartes.val[suiv]
+				fTantque
